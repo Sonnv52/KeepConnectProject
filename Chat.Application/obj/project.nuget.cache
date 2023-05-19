@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hVk5l9ZDItetfR39Lvq40OsYu5pTLkx0YL5t87NldPbhUXXbRWm5HEVxKMEjoB55At/rKLbSKQtHhafYgGkR0g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
