@@ -1,5 +1,6 @@
-using Chat.Application.Queries;
-using Chat.Infrastructure.DataContext;
+using Chat.Application;
+using Chat.Application.Features.UserApplication.Requests.Queries;
+using Chat.Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,12 +12,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//Connect Sql
-builder.Services.AddDbContext<ChatDbContext>(options =>
-options.UseSqlServer(
-    builder.Configuration.GetConnectionString("SqlServerConnection"),
-    b => b.MigrationsAssembly("Chat.Api")));
-builder.Services.AddMediatR(typeof(GetUserQuery));
+
+builder.Services.CofigurationApplicationServices();
+builder.Services.ConfigurePersistenceServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

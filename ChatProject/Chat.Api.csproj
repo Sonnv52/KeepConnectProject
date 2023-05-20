@@ -22,4 +22,9 @@
     <ProjectReference Include="..\Chat.Infrastructure\Chat.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helper\Filters\" />
+    <Folder Include="MilderWares\" />
+  </ItemGroup>
+
 </Project>

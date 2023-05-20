@@ -1,8 +1,6 @@
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\bin\Debug\net6.0\Chat.Application.deps.json
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\bin\Debug\net6.0\Chat.Application.dll
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\bin\Debug\net6.0\Chat.Application.pdb
-C:\Users\Admin\source\repos\ChatProject\Chat.Application\bin\Debug\net6.0\Chat.Core.dll
-C:\Users\Admin\source\repos\ChatProject\Chat.Application\bin\Debug\net6.0\Chat.Core.pdb
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\obj\Debug\net6.0\Chat.Application.csproj.AssemblyReference.cache
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\obj\Debug\net6.0\Chat.Application.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\obj\Debug\net6.0\Chat.Application.AssemblyInfoInputs.cache
@@ -13,3 +11,5 @@ C:\Users\Admin\source\repos\ChatProject\Chat.Application\obj\Debug\net6.0\Chat.A
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\obj\Debug\net6.0\refint\Chat.Application.dll
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\obj\Debug\net6.0\Chat.Application.pdb
 C:\Users\Admin\source\repos\ChatProject\Chat.Application\obj\Debug\net6.0\ref\Chat.Application.dll
+C:\Users\Admin\source\repos\ChatProject\Chat.Application\bin\Debug\net6.0\Chat.Domain.dll
+C:\Users\Admin\source\repos\ChatProject\Chat.Application\bin\Debug\net6.0\Chat.Domain.pdb
