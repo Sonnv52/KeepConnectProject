@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Chat.Domain.DAOs
 {
-    [Table("Bill")]
     public class UserApp : IdentityUser
     {
         [MaxLength(100)]

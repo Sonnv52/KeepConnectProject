@@ -1056,7 +1056,8 @@
           "Chat.Domain": "1.0.0",
           "FluentValidation.DependencyInjectionExtensions": "11.0.1",
           "MediatR": "9.0.0",
-          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0"
+          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
+          "System.Drawing.Common": "4.7.0"
         },
         "runtime": {
           "Chat.Application.dll": {}

@@ -43,6 +43,5 @@ namespace Chat.Infrastructure.Repositories
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
         }
-
     }
 }

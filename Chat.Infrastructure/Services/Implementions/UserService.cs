@@ -1,25 +1,24 @@
-﻿using Chat.Application.DTOs.UserApp;
+﻿using AutoMapper;
+using Chat.Application.DTOs.UserApp;
 using Chat.Application.Models.UserApp;
-using Chat.Application.Persistence.Contracts;
 using Chat.Application.Respone;
+using Chat.Application.Services.Abstractions;
 using Chat.Domain.DAOs;
-using Chat.Infrastructure.DataContext;
 using Microsoft.AspNetCore.Identity;
 
-namespace Chat.Infrastructure.Repositories
+namespace Chat.Infrastructure.Services.Implementions
 {
-    public class UserRepository : GenericRepository<UserApp> , IUserRepository
+    public class UserService : IUserService
     {
-        private readonly ChatDbContext _chatDbContext;
         private readonly UserManager<UserApp> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IMapper _mapper;
 
-        public UserRepository(ChatDbContext chatDbContext, UserManager<UserApp> userManager,
-             RoleManager<IdentityRole> roleManager) : base(chatDbContext) 
+        public UserService(UserManager<UserApp> userManager, RoleManager<IdentityRole> roleManager, IMapper mapper)
         {
-            _chatDbContext = chatDbContext;
             _userManager = userManager;
             _roleManager = roleManager;
+            _mapper = mapper;
         }
 
         public Task<UserApp> GetByEmailAsync(string email)
@@ -34,22 +33,13 @@ namespace Chat.Infrastructure.Repositories
             if (userExists is not null)
                 return new BaseCommandResponse<bool>
                 {
-                    Data= false,
+                    Data = false,
                     Message = "User is exists",
                     Success = false
                 };
+            var user = _mapper.Map<UserApp>(model);
 
-            UserApp user = new()
-            {
-                Email = model.Email,
-                SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.Email,
-                FullName = model.FullName,
-                Adress = model.Adress,
-                PhoneNumber = model.PhoneNumber
-            };
-
-            if (model.Password is null) return  new BaseCommandResponse<bool>
+            if (model.Password is null) return new BaseCommandResponse<bool>
             {
                 Data = false,
                 Message = "User is exists",
@@ -65,17 +55,17 @@ namespace Chat.Infrastructure.Repositories
                     Success = true
                 }; ;
 
-            if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
-                await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-            if (!await _roleManager.RoleExistsAsync(UserRoles.AdminAll))
-                await _roleManager.CreateAsync(new IdentityRole(UserRoles.AdminAll));
-            if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
+            if (!await _roleManager.RoleExistsAsync(UserRoles.ADMIN))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.ADMIN));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.MANAGER))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.MANAGER));
+            if (await _roleManager.RoleExistsAsync(UserRoles.ADMIN))
             {
-                await _userManager.AddToRoleAsync(user, UserRoles.Admin);
+                await _userManager.AddToRoleAsync(user, UserRoles.ADMIN);
             }
-            if (await _roleManager.RoleExistsAsync(UserRoles.AdminAll))
+            if (await _roleManager.RoleExistsAsync(UserRoles.MANAGER))
             {
-                await _userManager.AddToRoleAsync(user, UserRoles.AdminAll);
+                await _userManager.AddToRoleAsync(user, UserRoles.MANAGER);
             }
 
             return new BaseCommandResponse<bool>

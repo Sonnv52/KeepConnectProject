@@ -3,8 +3,8 @@ using MediatR;
 
 namespace Chat.Application.Features.UserApplication.Requests.Commads
 {
-    public class UpdateUserCommad : IRequest<Unit>
+    public record UpdateUserCommad : IRequest<Unit>
     {
-        public UserDTO? User { get; set; }
+        public UserDTO? User { get; init; }
     }
 }
