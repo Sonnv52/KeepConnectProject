@@ -11,6 +11,7 @@ namespace Chat.Api.Helper.Filters
         {
             var validExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
             var file = context.HttpContext.Request.Form.Files.FirstOrDefault();
+
             if (file != null)
             {
                 var extension = Path.GetExtension(file.FileName);

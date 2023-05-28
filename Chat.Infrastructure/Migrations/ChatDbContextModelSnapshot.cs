@@ -92,6 +92,53 @@ namespace Chat.Infrastructure.Migrations
                     b.ToTable("Image");
                 });
 
+            modelBuilder.Entity("Chat.Domain.DAOs.Message", b =>
+                {
+                    b.Property<Guid>("MessageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("File")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("HasDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("RoomId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("MessageId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("Message");
+                });
+
+            modelBuilder.Entity("Chat.Domain.DAOs.Room", b =>
+                {
+                    b.Property<Guid>("RoomId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AdminId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RoomName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RoomId");
+
+                    b.ToTable("Room");
+                });
+
             modelBuilder.Entity("Chat.Domain.DAOs.UserApp", b =>
                 {
                     b.Property<string>("Id")
@@ -169,6 +216,28 @@ namespace Chat.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Chat.Domain.DAOs.UserRoom", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoomId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoomId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserRoom");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -322,6 +391,36 @@ namespace Chat.Infrastructure.Migrations
                     b.Navigation("UserApp");
                 });
 
+            modelBuilder.Entity("Chat.Domain.DAOs.Message", b =>
+                {
+                    b.HasOne("Chat.Domain.DAOs.Room", "Room")
+                        .WithMany("Messages")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("Chat.Domain.DAOs.UserRoom", b =>
+                {
+                    b.HasOne("Chat.Domain.DAOs.Room", "Room")
+                        .WithMany("UserRooms")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Chat.Domain.DAOs.UserApp", "UserApp")
+                        .WithMany("UserRooms")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
+
+                    b.Navigation("UserApp");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -373,11 +472,20 @@ namespace Chat.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Chat.Domain.DAOs.Room", b =>
+                {
+                    b.Navigation("Messages");
+
+                    b.Navigation("UserRooms");
+                });
+
             modelBuilder.Entity("Chat.Domain.DAOs.UserApp", b =>
                 {
                     b.Navigation("Avatars");
 
                     b.Navigation("Images");
+
+                    b.Navigation("UserRooms");
                 });
 #pragma warning restore 612, 618
         }

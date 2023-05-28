@@ -4,6 +4,7 @@ using Chat.Domain.DAOs;
 using Chat.Infrastructure.DataContext;
 using Chat.Infrastructure.Repositories;
 using Chat.Infrastructure.Services.Implementions;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,15 +14,14 @@ namespace Chat.Infrastructure
 {
     public static class InfrastructureServicesRegistration
     {
-        public static IServiceCollection ConfigurePersistenceServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigurePersistenceServices(this IServiceCollection services, 
+            IConfiguration configuration)
         {
             services.AddDbContext<ChatDbContext>(options =>
                options.UseSqlServer(
                    configuration.GetConnectionString("SqlServerConnection")));
             //Dependency
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IUserService,UserService>();
-            services.AddScoped<IFileHandleService,FileHandleService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IWebRootPathProvider, WebRootPathProvider>();
         //Indentity configuration
@@ -34,10 +34,11 @@ namespace Chat.Infrastructure
                 options.Password.RequiredLength = 8;
                 options.Password.RequiredUniqueChars = 1;
             });
+            var s = configuration[""];
             services.AddIdentity<UserApp, IdentityRole>()
                     .AddEntityFrameworkStores<ChatDbContext>()
                     .AddDefaultTokenProviders();
-
+            var contentRoot = configuration.GetValue<string>(WebHostDefaults.ContentRootKey);
             return services;
         }
     }

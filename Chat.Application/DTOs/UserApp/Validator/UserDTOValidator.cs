@@ -1,9 +1,4 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chat.Application.DTOs.UserApp.Validator
 {
@@ -23,7 +18,8 @@ namespace Chat.Application.DTOs.UserApp.Validator
                 .MinimumLength(8).WithMessage("Password must be at least 8 characters long")
                 .Matches("[A-Z]").WithMessage("Password must contain at least one uppercase letter")
                 .Matches("[a-z]").WithMessage("Password must contain at least one lowercase letter")
-                .Matches("[0-9]").WithMessage("Password must contain at least one digit");
+                .Matches("[0-9]").WithMessage("Password must contain at least one digit")
+                .Matches(@"^\S*$").WithMessage("Password must not contain whitespace");
 
             RuleFor(u => u.ConfirmPassword)
                 .Equal(u => u.Password).WithMessage("Confirm password does not match password");

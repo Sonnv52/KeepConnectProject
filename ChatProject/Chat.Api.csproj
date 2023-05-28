@@ -23,8 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MilderWares\" />
-    <Folder Include="Respones\" />
+    <Folder Include="Respones\ResponesSever\" />
   </ItemGroup>
 
 </Project>

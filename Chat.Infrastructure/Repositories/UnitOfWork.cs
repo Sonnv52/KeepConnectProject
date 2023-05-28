@@ -1,10 +1,6 @@
-﻿using Chat.Application.Persistence.Contracts;
+﻿using Chat.Application.Exceptions;
+using Chat.Application.Persistence.Contracts;
 using Chat.Infrastructure.DataContext;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chat.Infrastructure.Repositories
 {
@@ -29,7 +25,14 @@ namespace Chat.Infrastructure.Repositories
 
         public async Task CommitAsync()
         {
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new SqlException(ex.ToString());
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Chat.Application.Helper.Extentions
 {
     public static class ResizeImageExtentions
     {
-        public static byte[] Resize(this byte[] imageData, int newWidth, int newHeight)
+        public static byte[] Resize(this byte[] imageData, Int32 newWidth, Int32 newHeight)
         {
             using (var ms = new MemoryStream(imageData))
             {

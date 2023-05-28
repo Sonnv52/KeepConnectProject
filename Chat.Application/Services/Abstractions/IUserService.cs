@@ -1,4 +1,5 @@
 ﻿using Chat.Application.DTOs.UserApp;
+using Chat.Application.Models.UserApp;
 using Chat.Application.Respone;
 using Chat.Domain.DAOs;
 using System;
@@ -13,5 +14,6 @@ namespace Chat.Application.Services.Abstractions
     {
         Task<UserApp> GetByEmailAsync(string email);
         Task<BaseCommandResponse<bool>> SignUpAsync(UserDTO user);
+        Task<AuthenticationModel> SignInAsync (LoginDTO user,  CancellationToken cancellationToken);
     }
 }

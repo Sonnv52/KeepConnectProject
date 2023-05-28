@@ -4,6 +4,7 @@ using Chat.Application.Respone;
 using Chat.Application.Services.Abstractions;
 using Chat.Domain.DAOs;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
 namespace Chat.Application.Features.UserApplication.Handlers.Commads
@@ -13,34 +14,35 @@ namespace Chat.Application.Features.UserApplication.Handlers.Commads
         private readonly IUnitOfWork _unitOfWork;
         private readonly IFileHandleService _fileHandleService;
         private readonly UserManager<UserApp> _userManager;
+        private readonly IHttpContextAccessor _contextAccessor;
 
-        public UpLoadAvatarCommadHandle(IUnitOfWork unitOfWork, IFileHandleService fileHandleService,
+        public UpLoadAvatarCommadHandle(IHttpContextAccessor contextAccessor, 
+            IUnitOfWork unitOfWork, IFileHandleService fileHandleService,
             UserManager<UserApp> userManager)
         {
             _unitOfWork = unitOfWork;
             _fileHandleService = fileHandleService;
             _userManager = userManager;
+            _contextAccessor = contextAccessor;
         }
 
-        async Task<BaseCommandResponse<IList<string>>> IRequestHandler<UpLoadAvatarCommad, BaseCommandResponse<IList<string>>>.Handle(UpLoadAvatarCommad request, CancellationToken cancellationToken)
+        async Task<BaseCommandResponse<IList<string>>> IRequestHandler<UpLoadAvatarCommad,
+            BaseCommandResponse<IList<string>>>.Handle(UpLoadAvatarCommad request,
+            CancellationToken cancellationToken)
         {
-            var user = await _userManager.FindByEmailAsync("boy98vippro@gmail.com");
+            var user = _contextAccessor.HttpContext.Items["User"] as UserApp;
+            //var user = await _userManager.FindByEmailAsync("boy98vippro@gmail.com");
 
             if (user == null)
             {
-                return new BaseCommandResponse<IList<string>> 
-                {
-                    Success= false
-                };
+               throw new ArgumentNullException(nameof(user));
             }
 
-            if(request.Avatar is null)
-                return new BaseCommandResponse<IList<string>>
-                {
-                    Success = false
-                };
+            if (request.Avatar is null)
+                throw new ArgumentNullException(nameof(request.Avatar));
 
             var pathAvatar = await _fileHandleService.SaveAsync(request.Avatar);
+
             var avatar = new Avatar
             {
                 CreateBy = user.FullName,

@@ -14,5 +14,6 @@ namespace Chat.Domain.DAOs
         public DateTime RefreshTokenExpiryTime { get; set; }
         public virtual IList<Image?>? Images { get; set; }
         public virtual IList<Avatar?>? Avatars { get; set; }
+        public virtual ICollection<UserRoom>? UserRooms { get; set; }
     }
 }
