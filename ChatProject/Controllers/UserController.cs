@@ -7,11 +7,13 @@ using Chat.Api.Respones.ResponesSever;
 using Chat.Application.DTOs.UserApp;
 using Chat.Application.Features.UserApplication.Requests.Commads;
 using Chat.Application.Features.UserApplication.Requests.Queries;
+using Chat.Application.Persistence.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Win32;
+using System.Net.WebSockets;
 
 namespace Chat.Api.Controllers
 {
@@ -29,7 +31,7 @@ namespace Chat.Api.Controllers
         {
             _mediator = mediator;
             _webHostEnvironment = webHostEnvironment;
-            _mapper = mapper;
+            _mapper = mapper; 
         }
 
         [HttpGet]
@@ -49,7 +51,6 @@ namespace Chat.Api.Controllers
             {
                 UserDTOUser = user
             };
-
             var result = await _mediator.Send(commad);
             return Ok(result);
         }
@@ -86,6 +87,44 @@ namespace Chat.Api.Controllers
             
             var result = await _mediator.Send(commad);
             return Ok(result.Data);
+        }
+
+        [HttpPost("/RefreshToken")]
+        [AllowAnonymous]
+        public async Task<IActionResult> RefreshTokenAsync([FromBody] RefreshTokenRequest authRefresh)
+        {
+            if (authRefresh is null)
+            {
+                return BadRequest();
+            }
+            var commad = new RefreshTokenCommad
+            {
+                AccessToken = authRefresh.AccessToken,
+                RefreshToken = authRefresh.RefreshToken
+            };
+            var result = await _mediator.Send(commad);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("/GetListFriend")]
+        public async Task<IActionResult> GetListFriendAsync([FromQuery] GetFriendsRequest request)
+        {
+            var query = new GetListFriendQuery
+            {
+                PageIndex = request.PageIndex,
+                PageSize = request.PageSize,
+                SearchKey = request.SearchKey
+            };
+            var result = await _mediator.Send(query);
+            var pageList = new ReponseListFriend
+            {
+                Data = result,
+                Total = result.TotalPages,
+                Success = true
+            };
+
+            return Ok(pageList);
         }
     }
 }

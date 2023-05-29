@@ -22,17 +22,24 @@ namespace Chat.Infrastructure.DataContext
            .OnDelete(DeleteBehavior.Cascade);
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellation = default)
+        public virtual async Task<int> SaveChangesAsync( CancellationToken token, string username = "SYSTEM")
         {
-            foreach (var entry in ChangeTracker.Entries<BaseEntity>())
+            foreach (var entry in base.ChangeTracker.Entries<BaseEntity>()
+                .Where(q => q.State == EntityState.Added || q.State == EntityState.Modified))
             {
                 entry.Entity.LastModifiedDate = DateTime.Now;
+                entry.Entity.LastModifiedBy = username;
+
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Entity.CreateDate = DateTime.Now;
+                    entry.Entity.LastModifiedDate = DateTime.Now;
+                    entry.Entity.LastModifiedBy = username;
                 }
             }
-            return base.SaveChangesAsync(cancellation);
+
+            var result = await base.SaveChangesAsync(token);
+
+            return result;
         }
 
         public DbSet<UserApp>? UserApps { get; set; }

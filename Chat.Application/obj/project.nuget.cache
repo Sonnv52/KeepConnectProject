@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iZBFNaDMpquDjaM59yo8qQOq9n/m1SvWT8gMCyR4J5/XUFhAt6XFn7TkDb0QcuCqBs9qxnvqWfh8nscRl+zTlw==",
+  "dgSpecHash": "XisXgaufCMx9R2qODIra0uKE4VZ96aefjjk6AP5552yN2byoqcj4cvp6nTJZTl0dKso6hoPw+UkWYMNRtX7mIA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\fluentvalidation\\11.0.1\\fluentvalidation.11.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.0.1\\fluentvalidation.dependencyinjectionextensions.11.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\jetbrains.annotations\\2022.3.1\\jetbrains.annotations.2022.3.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
@@ -105,7 +106,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\x.pagedlist\\8.4.7\\x.pagedlist.8.4.7.nupkg.sha512"
   ],
   "logs": []
 }

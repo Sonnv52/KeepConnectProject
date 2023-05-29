@@ -9,6 +9,7 @@ namespace Chat.Application.Persistence.Contracts
     public interface IUnitOfWork : IDisposable
     {
         IAvatarRepository AvatarRepository { get; }
-        Task CommitAsync();
+        IUserRepository UserRepository { get; }
+        Task CommitAsync(CancellationToken token = default(CancellationToken));
     }
 }

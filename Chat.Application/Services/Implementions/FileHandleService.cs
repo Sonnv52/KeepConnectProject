@@ -31,9 +31,9 @@ namespace Chat.Application.Services.Implementions
                 {
                    await data.CopyToAsync(stream);
                 }
-                catch(Exception)
+                catch(Exception e)
                 {
-                    throw;
+                    throw new FileNotFoundException(e.ToString());
                 }
             }
 

@@ -1,0 +1,589 @@
+2023-05-29 22:56:36.619 +07:00 [INF] User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-29 22:56:36.778 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 22:56:36.791 +07:00 [ERR] An exception occurred while processing the key element '<key id="524c8d78-96d5-4550-a4a8-af663435e15b" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 22:56:36.804 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:56:36.809 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:56:36.811 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 22:56:36.813 +07:00 [ERR] An exception occurred while processing the key element '<key id="04b97a98-c9d0-4307-a94a-84d8f19ff1b1" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 22:56:36.815 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:56:36.817 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 22:56:36.820 +07:00 [ERR] An exception occurred while processing the key element '<key id="6c1e9550-be47-42d7-9686-f84f63543c7e" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 22:56:36.823 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:56:36.825 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:56:36.828 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:56:36.830 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:56:36.834 +07:00 [INF] Creating key {b53405b2-1e78-4619-8625-206bf737b7cd} with creation date 2023-05-29 15:56:36Z, activation date 2023-05-29 15:56:36Z, and expiration date 2023-08-27 15:56:36Z.
+2023-05-29 22:56:36.837 +07:00 [ERR] An error occurred while encrypting to Windows DPAPI.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+2023-05-29 22:56:36.840 +07:00 [ERR] An error occurred while reading the key ring.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+2023-05-29 22:56:36.841 +07:00 [INF] Key ring failed to load during application startup.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService.StartAsync(CancellationToken token)
+2023-05-29 22:56:37.141 +07:00 [INF] Now listening on: https://localhost:7210
+2023-05-29 22:56:37.142 +07:00 [INF] Now listening on: http://localhost:5089
+2023-05-29 22:56:37.164 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-29 22:56:37.168 +07:00 [INF] Hosting environment: Development
+2023-05-29 22:56:37.170 +07:00 [INF] Content root path: C:\Users\Admin\source\repos\ChatProject\ChatProject\
+2023-05-29 22:56:41.218 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - -
+2023-05-29 22:56:41.987 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - - - 200 - text/html;charset=utf-8 772.8420ms
+2023-05-29 22:56:42.003 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - -
+2023-05-29 22:56:42.012 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 8.9742ms
+2023-05-29 22:56:42.054 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - -
+2023-05-29 22:56:42.284 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 229.6712ms
+2023-05-29 22:56:44.285 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - -
+2023-05-29 22:56:44.476 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 191.7181ms
+2023-05-29 22:58:14.361 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7210/Register application/json 197
+2023-05-29 22:58:14.732 +07:00 [INF] Executing endpoint 'Chat.Api.Controllers.UserController.RegisterAdminAsync (Chat.Api)'
+2023-05-29 22:58:14.803 +07:00 [INF] Route matched with {action = "RegisterAdmin", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterAdminAsync(Chat.Application.DTOs.UserApp.UserDTO) on controller Chat.Api.Controllers.UserController (Chat.Api).
+2023-05-29 22:58:16.673 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-05-29 22:58:18.630 +07:00 [INF] Executed DbCommand (166ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-05-29 22:58:18.816 +07:00 [INF] Executing OkObjectResult, writing value of type 'Chat.Application.Respone.BaseCommandResponse`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-29 22:58:18.854 +07:00 [INF] Executed action Chat.Api.Controllers.UserController.RegisterAdminAsync (Chat.Api) in 4043.5147ms
+2023-05-29 22:58:18.859 +07:00 [INF] Executed endpoint 'Chat.Api.Controllers.UserController.RegisterAdminAsync (Chat.Api)'
+2023-05-29 22:58:18.884 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7210/Register application/json 197 - 200 - application/json;+charset=utf-8 4524.3028ms
+2023-05-29 22:59:37.934 +07:00 [INF] User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-29 22:59:38.150 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 22:59:38.162 +07:00 [ERR] An exception occurred while processing the key element '<key id="524c8d78-96d5-4550-a4a8-af663435e15b" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 22:59:38.180 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:59:38.187 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:59:38.191 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 22:59:38.193 +07:00 [ERR] An exception occurred while processing the key element '<key id="04b97a98-c9d0-4307-a94a-84d8f19ff1b1" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 22:59:38.197 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:59:38.199 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 22:59:38.201 +07:00 [ERR] An exception occurred while processing the key element '<key id="6c1e9550-be47-42d7-9686-f84f63543c7e" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 22:59:38.202 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:59:38.205 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:59:38.207 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:59:38.210 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 22:59:38.216 +07:00 [INF] Creating key {bbe5c122-602f-455a-8d02-0318852726d5} with creation date 2023-05-29 15:59:38Z, activation date 2023-05-29 15:59:37Z, and expiration date 2023-08-27 15:59:37Z.
+2023-05-29 22:59:38.222 +07:00 [ERR] An error occurred while encrypting to Windows DPAPI.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+2023-05-29 22:59:38.227 +07:00 [ERR] An error occurred while reading the key ring.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+2023-05-29 22:59:38.228 +07:00 [INF] Key ring failed to load during application startup.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService.StartAsync(CancellationToken token)
+2023-05-29 22:59:39.272 +07:00 [INF] Now listening on: https://localhost:7210
+2023-05-29 22:59:39.304 +07:00 [INF] Now listening on: http://localhost:5089
+2023-05-29 22:59:39.339 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-29 22:59:39.343 +07:00 [INF] Hosting environment: Development
+2023-05-29 22:59:39.350 +07:00 [INF] Content root path: C:\Users\Admin\source\repos\ChatProject\ChatProject\
+2023-05-29 22:59:41.469 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - -
+2023-05-29 22:59:41.885 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - - - 200 - text/html;charset=utf-8 423.5690ms
+2023-05-29 22:59:42.150 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - -
+2023-05-29 22:59:42.157 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - -
+2023-05-29 22:59:42.157 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 7.8641ms
+2023-05-29 22:59:42.190 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.9799ms
+2023-05-29 22:59:42.510 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - -
+2023-05-29 22:59:42.644 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 133.6300ms
+2023-05-29 23:00:55.259 +07:00 [INF] User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-29 23:00:55.971 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 23:00:55.990 +07:00 [ERR] An exception occurred while processing the key element '<key id="524c8d78-96d5-4550-a4a8-af663435e15b" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 23:00:56.013 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 23:00:56.019 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 23:00:56.025 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 23:00:56.030 +07:00 [ERR] An exception occurred while processing the key element '<key id="04b97a98-c9d0-4307-a94a-84d8f19ff1b1" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 23:00:56.033 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 23:00:56.036 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-05-29 23:00:56.040 +07:00 [ERR] An exception occurred while processing the key element '<key id="6c1e9550-be47-42d7-9686-f84f63543c7e" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-05-29 23:00:56.045 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 23:00:56.048 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 23:00:56.050 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 23:00:56.052 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-05-29 23:00:56.058 +07:00 [INF] Creating key {e0607dd6-9f67-44f1-a2cc-343721935c55} with creation date 2023-05-29 16:00:56Z, activation date 2023-05-29 16:00:55Z, and expiration date 2023-08-27 16:00:55Z.
+2023-05-29 23:00:56.062 +07:00 [ERR] An error occurred while encrypting to Windows DPAPI.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+2023-05-29 23:00:56.064 +07:00 [ERR] An error occurred while reading the key ring.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+2023-05-29 23:00:56.064 +07:00 [INF] Key ring failed to load during application startup.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService.StartAsync(CancellationToken token)
+2023-05-29 23:00:56.282 +07:00 [INF] Now listening on: https://localhost:7210
+2023-05-29 23:00:56.284 +07:00 [INF] Now listening on: http://localhost:5089
+2023-05-29 23:00:56.292 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-29 23:00:56.295 +07:00 [INF] Hosting environment: Development
+2023-05-29 23:00:56.296 +07:00 [INF] Content root path: C:\Users\Admin\source\repos\ChatProject\ChatProject\
+2023-05-29 23:00:58.626 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - -
+2023-05-29 23:00:59.686 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - - - 200 - text/html;charset=utf-8 1075.1301ms
+2023-05-29 23:00:59.719 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - -
+2023-05-29 23:00:59.734 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 14.5887ms
+2023-05-29 23:00:59.738 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - -
+2023-05-29 23:00:59.768 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.4177ms
+2023-05-29 23:00:59.877 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - -
+2023-05-29 23:01:00.069 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 192.1069ms
+2023-05-29 23:04:39.592 +07:00 [INF] Application is shutting down...

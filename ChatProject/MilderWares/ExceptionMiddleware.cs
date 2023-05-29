@@ -1,4 +1,5 @@
 ﻿using Chat.Application.Exceptions;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -54,6 +55,13 @@ namespace Chat.Api.MilderWares
                 case UnauthorizedAccessException unauthorizedAccessException:
                     statusCode = HttpStatusCode.Unauthorized;
                     result = JsonConvert.SerializeObject(unauthorizedAccessException.Message);
+                    break;
+                case SecurityTokenException securityTokenException:
+                    statusCode = HttpStatusCode.Forbidden;
+                    break;
+                case FileNotFoundException fileNotFoundException:
+                    statusCode = HttpStatusCode.Conflict;
+                    result = JsonConvert.SerializeObject(fileNotFoundException.Message);
                     break;
                 default:
                     break;

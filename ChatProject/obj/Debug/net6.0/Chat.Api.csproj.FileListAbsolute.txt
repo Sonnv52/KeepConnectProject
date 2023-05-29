@@ -93,3 +93,5 @@ C:\Users\Admin\source\repos\ChatProject\ChatProject\bin\Debug\net6.0\AutoMapper.
 C:\Users\Admin\source\repos\ChatProject\ChatProject\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\Admin\source\repos\ChatProject\ChatProject\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Admin\source\repos\ChatProject\ChatProject\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Admin\source\repos\ChatProject\ChatProject\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\Admin\source\repos\ChatProject\ChatProject\bin\Debug\net6.0\X.PagedList.dll

@@ -42,7 +42,7 @@ namespace Chat.Api.MilderWares
             var tokenHandler = new JwtSecurityTokenHandler();
             try
             {
-                var _userManager = _httpContextAccessor.HttpContext.RequestServices
+                var _userManager = _httpContextAccessor?.HttpContext?.RequestServices
                     .GetService<UserManager<UserApp>>();
                 var claimsPrincipal = tokenHandler.ValidateToken(jwt, validationParameters,
                     out SecurityToken validatedToken);
@@ -55,7 +55,7 @@ namespace Chat.Api.MilderWares
                     return;
                 }
 
-                string Name = userIdClaim.Subject.Name.ToString();
+                string? Name = userIdClaim.Subject?.Name?.ToString() ?? "";
 
                 // Check if user exists and is not deleted
                 var user = await _userManager.FindByEmailAsync(Name);

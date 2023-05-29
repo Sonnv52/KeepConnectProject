@@ -67,6 +67,10 @@
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[4.7.0, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[8.4.7, )"
             }
           },
           "imports": [
@@ -314,9 +318,17 @@
               "target": "Package",
               "version": "[6.0.8, )"
             },
+            "Serilog.Extensions.Logging.File": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

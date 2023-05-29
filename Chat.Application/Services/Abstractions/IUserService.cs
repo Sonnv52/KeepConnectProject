@@ -15,5 +15,6 @@ namespace Chat.Application.Services.Abstractions
         Task<UserApp> GetByEmailAsync(string email);
         Task<BaseCommandResponse<bool>> SignUpAsync(UserDTO user);
         Task<AuthenticationModel> SignInAsync (LoginDTO user,  CancellationToken cancellationToken);
+        Task<AuthenticationModel> RefreshTokenAsync(string accessToken, string refreshToken);
     }
 }

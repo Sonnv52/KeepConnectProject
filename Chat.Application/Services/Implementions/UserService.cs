@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Chat.Application.DTOs.UserApp;
+using Chat.Application.Exceptions;
 using Chat.Application.Models.UserApp;
 using Chat.Application.Respone;
 using Chat.Application.Services.Abstractions;
@@ -21,7 +22,7 @@ namespace Chat.Application.Services.Implementions
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
 
-        public UserService(IConfiguration configuration, UserManager<UserApp> userManager, RoleManager<IdentityRole> roleManager, 
+        public UserService(IConfiguration configuration, UserManager<UserApp> userManager, RoleManager<IdentityRole> roleManager,
             IMapper mapper)
         {
             _userManager = userManager;
@@ -35,7 +36,7 @@ namespace Chat.Application.Services.Implementions
             throw new NotImplementedException();
         }
 
-        public async Task<AuthenticationModel> SignInAsync(LoginDTO user, 
+        public async Task<AuthenticationModel> SignInAsync(LoginDTO user,
             CancellationToken cancellationToken)
         {
             var userApp = await _userManager.FindByNameAsync(user.UserName);
@@ -45,7 +46,7 @@ namespace Chat.Application.Services.Implementions
 
             if (!userApp.LockoutEnabled)
                 throw new UnauthorizedAccessException("Account has been disabled");
-            
+
             if (userApp is not null && await _userManager.CheckPasswordAsync(userApp, user.Password))
             {
                 var userRoles = await _userManager.GetRolesAsync(userApp);
@@ -86,7 +87,7 @@ namespace Chat.Application.Services.Implementions
         {
             TimeZoneInfo localTimeZone = TimeZoneInfo.Local;
             DateTime currentTime = DateTime.Now;
-            DateTime resultTime = currentTime.AddMinutes(15).ToUniversalTime().ToLocalTime();
+            DateTime resultTime = currentTime.AddMinutes(1).ToUniversalTime().ToLocalTime();
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
             //Generate token
             var token = new JwtSecurityToken(
@@ -136,12 +137,13 @@ namespace Chat.Application.Services.Implementions
                     Data = true,
                     Message = "Fail",
                     Success = true
-                }; 
+                };
 
             if (!await _roleManager.RoleExistsAsync(UserRoles.ADMIN))
                 await _roleManager.CreateAsync(new IdentityRole(UserRoles.ADMIN));
             if (!await _roleManager.RoleExistsAsync(UserRoles.MANAGER))
                 await _roleManager.CreateAsync(new IdentityRole(UserRoles.MANAGER));
+
             if (await _roleManager.RoleExistsAsync(UserRoles.ADMIN))
             {
                 await _userManager.AddToRoleAsync(user, UserRoles.ADMIN);
@@ -157,6 +159,72 @@ namespace Chat.Application.Services.Implementions
                 Message = "Success",
                 Success = true
             };
+        }
+
+        public async Task<AuthenticationModel> RefreshTokenAsync(string accessToken, string refreshToken)
+        {
+            var principal = await Task.Run(() => GetPrincipalFromExpiredToken(accessToken));
+
+            if (principal is null)
+                throw new ArgumentNullException(nameof(principal));
+
+            string username = principal?.Identity?.Name ?? " ";
+            var user = await _userManager.FindByNameAsync(username);
+
+            if (!user.LockoutEnabled || user is null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
+                throw new SecurityTokenException("Invalid token");
+
+            var newAccessToken = GetToken(principal.Claims.ToList());
+            var newRefreshToken = GenerateRefreshToken();
+            user.RefreshToken = newRefreshToken;
+            _ = int.TryParse(_configuration["JWT:RefreshTokenValidityInDays"], out int refreshTokenValidityInDays);
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(refreshTokenValidityInDays);
+
+            try
+            {
+                await _userManager.UpdateAsync(user);
+            }
+            catch (Exception ex)
+            {
+                throw new SqlException(ex.ToString());
+            }
+
+            return new AuthenticationModel
+            {
+                AccessToken = new JwtSecurityTokenHandler().WriteToken(newAccessToken),
+                RefreshToken = newRefreshToken
+            };
+        }
+
+        private ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token)
+        {
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateAudience = false,
+                ValidateIssuer = false,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"])),
+                ValidateLifetime = false
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            ClaimsPrincipal principal;
+            SecurityToken securityToken;
+
+            try
+            {
+                principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out securityToken);
+            }
+            catch (Exception ex)
+            {
+                throw new SecurityTokenException(ex.ToString());
+            }
+
+            if (securityToken is not JwtSecurityToken jwtSecurityToken ||
+                !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                throw new SecurityTokenException("Invalid token");
+
+            return principal;
         }
     }
 }
