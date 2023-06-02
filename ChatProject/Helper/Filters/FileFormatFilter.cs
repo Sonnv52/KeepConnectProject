@@ -9,11 +9,18 @@ namespace Chat.Api.Helper.Filters
     {
         public void OnActionExecuting(ActionExecutingContext context)
         {
+            long maxFileSize = 10 * 1024 * 1024;
             var validExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
             var file = context.HttpContext.Request.Form.Files.FirstOrDefault();
 
             if (file != null)
             {
+                if (file.Length > maxFileSize)
+                {
+                    context.Result = new BadRequestObjectResult("File size exceeds the maximum limit of 10 MB.");
+                    return;
+                }
+
                 var extension = Path.GetExtension(file.FileName);
                 if (!validExtensions.Contains(extension.ToLower()))
                 {

@@ -2,18 +2,13 @@
 using Chat.Api.Helper.Filters;
 using Chat.Api.Requests;
 using Chat.Api.Requests.UserRequests;
-using Chat.Api.Respones.Common;
 using Chat.Api.Respones.ResponesSever;
 using Chat.Application.DTOs.UserApp;
 using Chat.Application.Features.UserApplication.Requests.Commads;
 using Chat.Application.Features.UserApplication.Requests.Queries;
-using Chat.Application.Persistence.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Win32;
-using System.Net.WebSockets;
 
 namespace Chat.Api.Controllers
 {
@@ -43,7 +38,7 @@ namespace Chat.Api.Controllers
         }
 
         [HttpPost]
-        [Route("/Register")]
+        [Route("/register")]
         [AllowAnonymous]
         public async Task<IActionResult> RegisterAdminAsync([FromBody] UserDTO user)
         {
@@ -57,7 +52,7 @@ namespace Chat.Api.Controllers
 
         [HttpPost]
         [ServiceFilter(typeof(FileFormatFilter))]
-        [Route("/Avatar")]
+        [Route("/avatar")]
         public async Task<IActionResult> UploadAvatarAsync([FromForm] AvatarRequest request)
         {
             var commad = new UpLoadAvatarCommad
@@ -75,7 +70,7 @@ namespace Chat.Api.Controllers
         }
 
         [HttpPost]
-        [Route("/Login/User")]
+        [Route("/login/user")]
         [AllowAnonymous]
         public async Task<IActionResult> SignInAsync([FromBody] LoginModel user)
         {
@@ -89,7 +84,7 @@ namespace Chat.Api.Controllers
             return Ok(result.Data);
         }
 
-        [HttpPost("/RefreshToken")]
+        [HttpPost("/refreshtoken")]
         [AllowAnonymous]
         public async Task<IActionResult> RefreshTokenAsync([FromBody] RefreshTokenRequest authRefresh)
         {
@@ -107,7 +102,7 @@ namespace Chat.Api.Controllers
         }
 
         [HttpGet]
-        [Route("/GetListFriend")]
+        [Route("/getlistfriend")]
         public async Task<IActionResult> GetListFriendAsync([FromQuery] GetFriendsRequest request)
         {
             var query = new GetListFriendQuery

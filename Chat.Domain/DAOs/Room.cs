@@ -15,7 +15,7 @@ namespace Chat.Domain.DAOs
         public Guid RoomId { get; set; }
         [Required]
         public string? RoomName { get; set; }
-        public Guid AdminId { get; set; }
+        public string? AdminId { get; set; }
         public virtual ICollection<UserRoom>? UserRooms { get; set; }
         public virtual ICollection<Message>? Messages { get; set; }
     }

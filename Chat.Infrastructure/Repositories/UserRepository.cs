@@ -24,6 +24,11 @@ namespace Chat.Infrastructure.Repositories
             _contextAccessor = contextAccessor;
         }
 
+        public async Task<UserApp> GetByStringIdAsync(string id)
+        {
+           return  await _context.Set<UserApp>().FindAsync(id);
+        }
+
         public Task<PagedList<FriendToList>> GetListFriendAsync(int PageIndex, int PageSize, string? Key)
         {
             var user = _contextAccessor?.HttpContext?.Items["User"] as UserApp;
@@ -53,5 +58,7 @@ namespace Chat.Infrastructure.Repositories
 
                 return Task.FromResult(friendList);
         }
+
+        
     }
 }

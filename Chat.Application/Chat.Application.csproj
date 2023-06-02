@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <Folder Include="DTOs\Common\" />
+    <Folder Include="Features\Rooms\Handlers\Queries\" />
+    <Folder Include="Features\Rooms\Requests\Queries\" />
   </ItemGroup>
 
 </Project>

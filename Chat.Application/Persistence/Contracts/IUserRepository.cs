@@ -13,5 +13,6 @@ namespace Chat.Application.Persistence.Contracts
     public interface IUserRepository : IGenericRepository<UserApp>
     {
         Task<PagedList<FriendToList>> GetListFriendAsync(int PageIndex, int PageSize, string? Key);
+        Task<UserApp> GetByStringIdAsync(string id);
     }
 }

@@ -87,7 +87,7 @@ namespace Chat.Application.Services.Implementions
         {
             TimeZoneInfo localTimeZone = TimeZoneInfo.Local;
             DateTime currentTime = DateTime.Now;
-            DateTime resultTime = currentTime.AddMinutes(1).ToUniversalTime().ToLocalTime();
+            DateTime resultTime = currentTime.AddMinutes(3000).ToUniversalTime().ToLocalTime();
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
             //Generate token
             var token = new JwtSecurityToken(

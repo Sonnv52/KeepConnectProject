@@ -1,5 +1,6 @@
 using AutoMapper;
 using Chat.Api.Helper.Filters;
+using Chat.Api.Hubs;
 using Chat.Api.MilderWares;
 using Chat.Application;
 using Chat.Infrastructure;
@@ -18,6 +19,7 @@ builder.Services.AddTransient<FileFormatFilter>();
 builder.Services.CofigurationApplicationServices(builder.Configuration);
 builder.Services.ConfigurePersistenceServices(builder.Configuration);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddSignalR();
 var path = Directory.GetCurrentDirectory();
 var _logger = new LoggerConfiguration()
     .WriteTo.File($"{path}\\Logs\\RunTimeLog.txt", rollingInterval: RollingInterval.Day)
@@ -32,11 +34,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors(x => x
+          .AllowAnyMethod()
+          .AllowAnyHeader()
+          .SetIsOriginAllowed(origin => true)
+          .AllowCredentials());
 
 app.UseMiddleware();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseRouting();
+app.MapHub<ChatHubs>("/chatHub");
 app.UseAuthorization();
 app.MapControllers();
 

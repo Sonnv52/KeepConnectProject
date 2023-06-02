@@ -11,6 +11,7 @@ namespace Chat.Infrastructure.Repositories
         private readonly ChatDbContext _context;
         private IAvatarRepository _avatarRepository;
         private IUserRepository _userRepository;
+        private IUserRoomRepository _userRoomRepository;
         private IHttpContextAccessor _httpContext;
 
         public UnitOfWork(ChatDbContext context, IHttpContextAccessor httpContext)
@@ -24,6 +25,9 @@ namespace Chat.Infrastructure.Repositories
 
         public IUserRepository UserRepository =>
            _userRepository ??= new UserRepository(_context, _httpContext);
+
+        public IUserRoomRepository UserRoomRepository => 
+            _userRoomRepository ??= new UserRoomRepository(_context);
 
         public void Dispose()
         {

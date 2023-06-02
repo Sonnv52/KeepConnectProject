@@ -10,6 +10,7 @@ namespace Chat.Application.Persistence.Contracts
     {
         IAvatarRepository AvatarRepository { get; }
         IUserRepository UserRepository { get; }
+        IUserRoomRepository UserRoomRepository { get; }
         Task CommitAsync(CancellationToken token = default(CancellationToken));
     }
 }
