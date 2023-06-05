@@ -22,6 +22,10 @@
 
   <ItemGroup>
     <Folder Include="DTOs\Common\" />
+    <Folder Include="Features\Message\Handlers\Commads\" />
+    <Folder Include="Features\Message\Handlers\Queries\" />
+    <Folder Include="Features\Message\Requests\Commads\" />
+    <Folder Include="Features\Message\Requests\Queries\" />
     <Folder Include="Features\Rooms\Handlers\Queries\" />
     <Folder Include="Features\Rooms\Requests\Queries\" />
   </ItemGroup>

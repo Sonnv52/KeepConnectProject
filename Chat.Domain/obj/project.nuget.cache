@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zQknS3yMutejDiOR/gX1mABKKGi4R8wBFt8RmHiiJSR9AMTeWzMTQL9WJ7lwI0JWw4OZvGSxlLVzw8tGInqJ8Q==",
+  "dgSpecHash": "vQsMVHX3iOKqX50DUxGG+nGcg2iI0E/WUTUqbQrVsFLYjSyg0zA7smXkZenaAp0VGPx0Z8Xz5mqPDKilNJ8DGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
@@ -71,6 +71,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mongodb.bson\\2.19.2\\mongodb.bson.2.19.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

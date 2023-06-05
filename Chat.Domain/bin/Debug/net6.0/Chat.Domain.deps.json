@@ -11,7 +11,8 @@
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Microsoft.Extensions.Identity.Stores": "7.0.5"
+          "Microsoft.Extensions.Identity.Stores": "7.0.5",
+          "MongoDB.Bson": "2.19.2"
         },
         "runtime": {
           "Chat.Domain.dll": {}
@@ -867,6 +868,17 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
+      "MongoDB.Bson/2.19.2": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "assemblyVersion": "2.19.2.0",
+            "fileVersion": "2.19.2.0"
+          }
+        }
+      },
       "Newtonsoft.Json/11.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -1431,6 +1443,13 @@
       "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
+    },
+    "MongoDB.Bson/2.19.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YpwSLKillPRj+BYEZU0dFgVHdCuj7uGIkLcyEc5a9zwJQYMbZkAc2CRVzobnDY9HMSCtyefXnkrz9CQ6C91KQA==",
+      "path": "mongodb.bson/2.19.2",
+      "hashPath": "mongodb.bson.2.19.2.nupkg.sha512"
     },
     "Newtonsoft.Json/11.0.2": {
       "type": "package",

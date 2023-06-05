@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj",
         "projectName": "Chat.Application",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj"
               }
             }
           }
@@ -93,14 +93,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj",
         "projectName": "Chat.Domain",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -144,6 +144,10 @@
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[7.0.5, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.19.2, )"
             }
           },
           "imports": [
@@ -166,14 +170,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj",
         "projectName": "Chat.Infrastructure",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Infrastructure\\Chat.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -190,11 +194,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj": {
-                "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj"
               },
-              "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj"
               }
             }
           }
@@ -232,6 +236,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.8, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.2, )"
             }
           },
           "imports": [

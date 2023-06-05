@@ -17,3 +17,22 @@ C:\Users\Admin\source\repos\ChatProject\Chat.Infrastructure\obj\Debug\net6.0\Cha
 C:\Users\Admin\source\repos\ChatProject\Chat.Infrastructure\obj\Debug\net6.0\ref\Chat.Infrastructure.dll
 C:\Users\Admin\source\repos\ChatProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Application.dll
 C:\Users\Admin\source\repos\ChatProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Application.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Infrastructure.deps.json
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Infrastructure.runtimeconfig.json
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Infrastructure.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Infrastructure.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Application.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Domain.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Application.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\bin\Debug\net6.0\Chat.Domain.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.csproj.CopyComplete
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\refint\Chat.Infrastructure.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\Chat.Infrastructure.genruntimeconfig.cache
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Infrastructure\obj\Debug\net6.0\ref\Chat.Infrastructure.dll

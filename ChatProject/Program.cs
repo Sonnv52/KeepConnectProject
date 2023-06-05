@@ -1,8 +1,9 @@
 using AutoMapper;
 using Chat.Api.Helper.Filters;
-using Chat.Api.Hubs;
 using Chat.Api.MilderWares;
 using Chat.Application;
+using Chat.Hubs;
+using Chat.Hubs.Hubs;
 using Chat.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Serilog;
@@ -19,7 +20,7 @@ builder.Services.AddTransient<FileFormatFilter>();
 builder.Services.CofigurationApplicationServices(builder.Configuration);
 builder.Services.ConfigurePersistenceServices(builder.Configuration);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddSignalR();
+builder.Services.CofigurationHubsServices();
 var path = Directory.GetCurrentDirectory();
 var _logger = new LoggerConfiguration()
     .WriteTo.File($"{path}\\Logs\\RunTimeLog.txt", rollingInterval: RollingInterval.Day)
@@ -44,7 +45,7 @@ app.UseMiddleware();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseRouting();
-app.MapHub<ChatHubs>("/chatHub");
+app.MapHub<ChatHub>("/chatHub");
 app.UseAuthorization();
 app.MapControllers();
 

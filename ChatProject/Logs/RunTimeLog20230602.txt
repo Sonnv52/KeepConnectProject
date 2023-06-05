@@ -1,0 +1,430 @@
+2023-06-02 21:27:46.693 +07:00 [INF] User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-02 21:27:47.294 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-06-02 21:27:47.328 +07:00 [ERR] An exception occurred while processing the key element '<key id="524c8d78-96d5-4550-a4a8-af663435e15b" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-06-02 21:27:47.363 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-06-02 21:27:47.369 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-06-02 21:27:47.380 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-06-02 21:27:47.389 +07:00 [ERR] An exception occurred while processing the key element '<key id="04b97a98-c9d0-4307-a94a-84d8f19ff1b1" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-06-02 21:27:47.393 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-06-02 21:27:47.398 +07:00 [ERR] An exception occurred while trying to decrypt the element.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2023-06-02 21:27:47.402 +07:00 [ERR] An exception occurred while processing the key element '<key id="6c1e9550-be47-42d7-9686-f84f63543c7e" version="1" />'.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2023-06-02 21:27:47.405 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-06-02 21:27:47.407 +07:00 [WRN] Key {6c1e9550-be47-42d7-9686-f84f63543c7e} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-06-02 21:27:47.412 +07:00 [WRN] Key {04b97a98-c9d0-4307-a94a-84d8f19ff1b1} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-06-02 21:27:47.420 +07:00 [WRN] Key {524c8d78-96d5-4550-a4a8-af663435e15b} is ineligible to be the default key because its CreateEncryptor method failed.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptUnprotectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DeferredKey.<>c__DisplayClass1_0.<GetLazyDescriptorDelegate>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.get_Descriptor()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2023-06-02 21:27:47.425 +07:00 [INF] Creating key {0ef36845-8319-4ee0-88ba-c4c869506acd} with creation date 2023-06-02 14:27:47Z, activation date 2023-06-02 14:27:46Z, and expiration date 2023-08-31 14:27:46Z.
+2023-06-02 21:27:47.436 +07:00 [ERR] An error occurred while encrypting to Windows DPAPI.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+2023-06-02 21:27:47.438 +07:00 [ERR] An error occurred while reading the key ring.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+2023-06-02 21:27:47.439 +07:00 [INF] Key ring failed to load during application startup.
+System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService.StartAsync(CancellationToken token)
+2023-06-02 21:27:48.319 +07:00 [INF] Now listening on: https://localhost:7210
+2023-06-02 21:27:48.349 +07:00 [INF] Now listening on: http://localhost:5089
+2023-06-02 21:27:48.385 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-02 21:27:48.413 +07:00 [INF] Hosting environment: Development
+2023-06-02 21:27:48.443 +07:00 [INF] Content root path: C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\ChatProject\
+2023-06-02 21:27:51.237 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - -
+2023-06-02 21:27:51.364 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - - - 301 0 - 131.8367ms
+2023-06-02 21:27:51.380 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - -
+2023-06-02 21:27:51.744 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - - - 200 - text/html;charset=utf-8 364.2706ms
+2023-06-02 21:27:51.753 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui.css - -
+2023-06-02 21:27:51.754 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui-bundle.js - -
+2023-06-02 21:27:51.754 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui-standalone-preset.js - -
+2023-06-02 21:27:51.755 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - -
+2023-06-02 21:27:51.761 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - -
+2023-06-02 21:27:51.766 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 10.8986ms
+2023-06-02 21:27:51.950 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-06-02 21:27:51.950 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-06-02 21:27:51.951 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui.css - - - 200 144929 text/css 198.3381ms
+2023-06-02 21:27:51.955 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 200.5548ms
+2023-06-02 21:27:51.958 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-06-02 21:27:51.958 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 204.2366ms
+2023-06-02 21:27:51.970 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 208.8165ms
+2023-06-02 21:27:52.163 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - -
+2023-06-02 21:27:52.309 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.4892ms
+2023-06-02 21:28:16.008 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:28:16.008 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:28:16.009 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:16.009 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:16.011 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 2.7734ms
+2023-06-02 21:28:16.011 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 2.8057ms
+2023-06-02 21:28:16.018 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:28:16.018 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:28:16.019 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:16.019 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:17.236 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:28:17.236 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:28:18.505 +07:00 [INF] Executed DbCommand (114ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:28:18.505 +07:00 [INF] Executed DbCommand (114ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:28:18.649 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:28:18.649 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:28:18.662 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:28:18.662 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:28:18.670 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 2651.2963ms
+2023-06-02 21:28:18.670 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 2651.3314ms
+2023-06-02 21:28:18.680 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=-yl6I6Wi98z-oGpRinW7Og&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:28:18.680 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:18.683 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:28:18.708 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=Qj0Js_P0DW5B4toNF-ducQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:28:18.709 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:18.709 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:28:29.707 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:28:29.707 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:28:29.707 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:29.707 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:29.707 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.3312ms
+2023-06-02 21:28:29.707 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.3310ms
+2023-06-02 21:28:29.710 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:28:29.710 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:28:29.710 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:29.710 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:29.758 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:28:29.759 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:28:29.768 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:28:29.768 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:28:29.768 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:28:29.768 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:28:29.769 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:28:29.769 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:28:29.769 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 58.5689ms
+2023-06-02 21:28:29.769 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 58.6144ms
+2023-06-02 21:28:29.774 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=JCbPY-CmcKL2FegAwjRKdQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:28:29.774 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:29.774 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:28:29.787 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=ogaSipNHWvljZlm-6u0c8Q&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:28:29.787 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:28:29.788 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:29:44.230 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:29:44.230 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:29:44.230 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:29:44.230 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:29:44.230 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.4117ms
+2023-06-02 21:29:44.230 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.4113ms
+2023-06-02 21:29:44.235 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:29:44.235 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:29:44.235 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:29:44.235 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:29:44.238 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:29:44.239 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:29:44.244 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:29:44.245 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:29:44.245 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:29:44.245 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:29:44.245 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:29:44.245 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 10.8488ms
+2023-06-02 21:29:44.247 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:29:44.247 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 12.9528ms
+2023-06-02 21:29:44.254 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=NJ0MUZSdXMzea07rUTuqhQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:29:44.254 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:29:44.254 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:29:44.277 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=ok20wJZ8J5QigCDSEXRrKQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:29:44.277 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:29:44.277 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:30:10.488 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:30:10.488 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:30:10.488 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:30:10.488 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:30:10.488 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.3236ms
+2023-06-02 21:30:10.488 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.2965ms
+2023-06-02 21:30:10.497 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:30:10.497 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:30:10.497 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:30:10.497 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:30:10.500 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:30:10.501 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:30:10.512 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:30:10.514 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:30:10.515 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:30:10.515 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:30:10.515 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:30:10.515 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:30:10.515 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 18.6176ms
+2023-06-02 21:30:10.515 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 18.6055ms
+2023-06-02 21:30:10.526 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=nam1dwFeZXpRXMshgauDQQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:30:10.527 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:30:10.527 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:30:10.560 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=9YfYe7Kpj7M4tJydGaInbQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:30:10.560 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:30:10.561 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:30:11.555 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - -
+2023-06-02 21:30:11.577 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - - - 200 - text/html;charset=utf-8 21.4269ms
+2023-06-02 21:30:11.754 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - -
+2023-06-02 21:30:11.754 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - -
+2023-06-02 21:30:11.754 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 0.4742ms
+2023-06-02 21:30:11.760 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.4852ms
+2023-06-02 21:30:11.853 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - -
+2023-06-02 21:30:11.858 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.8842ms
+2023-06-02 21:30:11.863 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/favicon-32x32.png - -
+2023-06-02 21:30:11.864 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-06-02 21:30:11.864 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/favicon-32x32.png - - - 200 628 image/png 0.6673ms
+2023-06-02 21:30:54.548 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - -
+2023-06-02 21:30:54.560 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - - - 200 - text/html;charset=utf-8 12.4851ms
+2023-06-02 21:30:54.581 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - -
+2023-06-02 21:30:54.581 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 0.3431ms
+2023-06-02 21:30:54.592 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - -
+2023-06-02 21:30:54.598 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.6055ms
+2023-06-02 21:30:54.673 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - -
+2023-06-02 21:30:54.679 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6.1364ms
+2023-06-02 21:31:15.259 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:15.259 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:15.259 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:15.259 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:15.260 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=NJ0MUZSdXMzea07rUTuqhQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 91004.8906ms
+2023-06-02 21:31:15.260 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=-yl6I6Wi98z-oGpRinW7Og&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 176578.1185ms
+2023-06-02 21:31:15.260 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=Qj0Js_P0DW5B4toNF-ducQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 176549.7017ms
+2023-06-02 21:31:15.260 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=9YfYe7Kpj7M4tJydGaInbQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 64699.2145ms
+2023-06-02 21:31:17.410 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:31:17.410 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:31:17.410 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:17.410 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:17.410 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.5681ms
+2023-06-02 21:31:17.410 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.5287ms
+2023-06-02 21:31:17.415 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:31:17.415 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:31:17.415 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:17.415 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:17.417 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:31:17.418 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:31:17.423 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:31:17.424 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:31:17.424 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:31:17.424 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:31:17.424 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:31:17.424 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:31:17.424 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 9.8398ms
+2023-06-02 21:31:17.424 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 9.8256ms
+2023-06-02 21:31:17.430 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=rG7WsSXCbAf3sSzWhoW6Cg&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:31:17.430 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:17.431 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:31:17.444 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=8fU0UifE2K1-dwUWbhqnCw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:31:17.444 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:17.444 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:31:43.832 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:43.833 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:43.833 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:43.833 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=ok20wJZ8J5QigCDSEXRrKQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 119554.7987ms
+2023-06-02 21:31:43.833 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=JCbPY-CmcKL2FegAwjRKdQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 194057.1632ms
+2023-06-02 21:31:43.833 +07:00 [INF] Executed endpoint '/chatHub'
+2023-06-02 21:31:43.833 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=nam1dwFeZXpRXMshgauDQQ&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 93305.7461ms
+2023-06-02 21:31:43.833 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7210/chatHub?id=ogaSipNHWvljZlm-6u0c8Q&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - - - 101 - - 194043.8514ms
+2023-06-02 21:31:45.987 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:31:45.987 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - -
+2023-06-02 21:31:45.987 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:45.987 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:45.987 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.3319ms
+2023-06-02 21:31:45.987 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - - - 204 - - 0.3329ms
+2023-06-02 21:31:45.991 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:31:45.991 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0
+2023-06-02 21:31:45.991 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:45.991 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:45.993 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:31:45.995 +07:00 [INF] Entity Framework Core 6.0.16 initialized 'ChatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2023-06-02 21:31:45.999 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:31:46.000 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Adress], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-02 21:31:46.001 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:31:46.001 +07:00 [INF] Executing endpoint '/chatHub/negotiate'
+2023-06-02 21:31:46.001 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:31:46.001 +07:00 [INF] Executed endpoint '/chatHub/negotiate'
+2023-06-02 21:31:46.001 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 10.0345ms
+2023-06-02 21:31:46.001 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7210/chatHub/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 10.0374ms
+2023-06-02 21:31:46.012 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=wLogvLiW1DNzrcKHE8EoVw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:31:46.012 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:46.012 +07:00 [INF] Executing endpoint '/chatHub'
+2023-06-02 21:31:46.025 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7210/chatHub?id=-oUzaSp_53loU5XSWH051g&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYm95NTAwMEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJib3k1MDAwQGdtYWlsLmNvbSIsImp0aSI6IjE3Y2ZjMzk2LTgxZTctNDc2Ny1hMGQ3LTA0MzkyNTYxM2Y1OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJBZG1pbiIsIk1hbmFnZXIiXSwiZXhwIjoxNjg1ODkzMjk5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjEwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIxMCJ9.JtMU3rATWxp9hzoD2gyrrKczh7DBxZwwCQrxsuNHwzA - -
+2023-06-02 21:31:46.025 +07:00 [INF] CORS policy execution successful.
+2023-06-02 21:31:46.026 +07:00 [INF] Executing endpoint '/chatHub'

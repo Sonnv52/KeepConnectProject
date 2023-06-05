@@ -1239,6 +1239,22 @@
           }
         }
       },
+      "MongoDB.Bson/2.19.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/11.0.2": {
         "type": "package",
         "compile": {
@@ -2605,6 +2621,25 @@
         "version.txt"
       ]
     },
+    "MongoDB.Bson/2.19.2": {
+      "sha512": "YpwSLKillPRj+BYEZU0dFgVHdCuj7uGIkLcyEc5a9zwJQYMbZkAc2CRVzobnDY9HMSCtyefXnkrz9CQ6C91KQA==",
+      "type": "package",
+      "path": "mongodb.bson/2.19.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/net472/MongoDB.Bson.dll",
+        "lib/net472/MongoDB.Bson.xml",
+        "lib/netstandard2.0/MongoDB.Bson.dll",
+        "lib/netstandard2.0/MongoDB.Bson.xml",
+        "lib/netstandard2.1/MongoDB.Bson.dll",
+        "lib/netstandard2.1/MongoDB.Bson.xml",
+        "mongodb.bson.2.19.2.nupkg.sha512",
+        "mongodb.bson.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Newtonsoft.Json/11.0.2": {
       "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "type": "package",
@@ -3229,7 +3264,8 @@
       "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 6.0.8",
-      "Microsoft.Extensions.Identity.Stores >= 7.0.5"
+      "Microsoft.Extensions.Identity.Stores >= 7.0.5",
+      "MongoDB.Bson >= 2.19.2"
     ]
   },
   "packageFolders": {
@@ -3238,11 +3274,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj",
       "projectName": "Chat.Domain",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj",
+      "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3286,6 +3322,10 @@
           "Microsoft.Extensions.Identity.Stores": {
             "target": "Package",
             "version": "[7.0.5, )"
+          },
+          "MongoDB.Bson": {
+            "target": "Package",
+            "version": "[2.19.2, )"
           }
         },
         "imports": [

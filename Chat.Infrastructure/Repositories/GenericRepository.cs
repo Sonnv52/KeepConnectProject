@@ -43,5 +43,10 @@ namespace Chat.Infrastructure.Repositories
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
         }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
     }
 }

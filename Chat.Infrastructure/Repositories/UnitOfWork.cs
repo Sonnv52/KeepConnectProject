@@ -2,6 +2,7 @@
 using Chat.Application.Persistence.Contracts;
 using Chat.Domain.DAOs;
 using Chat.Infrastructure.DataContext;
+using Chat.Infrastructure.Helper.Abtractions;
 using Microsoft.AspNetCore.Http;
 
 namespace Chat.Infrastructure.Repositories
@@ -10,14 +11,19 @@ namespace Chat.Infrastructure.Repositories
     {
         private readonly ChatDbContext _context;
         private IAvatarRepository _avatarRepository;
+        private IMessageRepository _messageRepository;
         private IUserRepository _userRepository;
         private IUserRoomRepository _userRoomRepository;
         private IHttpContextAccessor _httpContext;
+        private IUserConnectionIdRepository _userConnectionIdRepository;
+        private IMongoContext _mongoDbContext; 
 
-        public UnitOfWork(ChatDbContext context, IHttpContextAccessor httpContext)
+        public UnitOfWork(ChatDbContext context, IHttpContextAccessor httpContext,
+            IMongoContext mongoDbContext)
         {
             _context = context;
             _httpContext = httpContext;
+            _mongoDbContext = mongoDbContext;
         }
 
         public IAvatarRepository AvatarRepository =>
@@ -28,6 +34,12 @@ namespace Chat.Infrastructure.Repositories
 
         public IUserRoomRepository UserRoomRepository => 
             _userRoomRepository ??= new UserRoomRepository(_context);
+
+        public IMessageRepository MessageRepository =>
+            _messageRepository ??= new MessageRepository(_context);
+
+        public IUserConnectionIdRepository UserConnectionIdRepository =>
+            _userConnectionIdRepository ??= new UserConnectionIdRepository(_mongoDbContext);
 
         public void Dispose()
         {

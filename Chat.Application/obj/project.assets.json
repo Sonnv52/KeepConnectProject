@@ -1469,6 +1469,22 @@
           }
         }
       },
+      "MongoDB.Bson/2.19.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/11.0.2": {
         "type": "package",
         "compile": {
@@ -1803,7 +1819,8 @@
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Microsoft.Extensions.Identity.Stores": "7.0.5"
+          "Microsoft.Extensions.Identity.Stores": "7.0.5",
+          "MongoDB.Bson": "2.19.2"
         },
         "compile": {
           "bin/placeholder/Chat.Domain.dll": {}
@@ -3242,6 +3259,25 @@
         "version.txt"
       ]
     },
+    "MongoDB.Bson/2.19.2": {
+      "sha512": "YpwSLKillPRj+BYEZU0dFgVHdCuj7uGIkLcyEc5a9zwJQYMbZkAc2CRVzobnDY9HMSCtyefXnkrz9CQ6C91KQA==",
+      "type": "package",
+      "path": "mongodb.bson/2.19.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/net472/MongoDB.Bson.dll",
+        "lib/net472/MongoDB.Bson.xml",
+        "lib/netstandard2.0/MongoDB.Bson.dll",
+        "lib/netstandard2.0/MongoDB.Bson.xml",
+        "lib/netstandard2.1/MongoDB.Bson.dll",
+        "lib/netstandard2.1/MongoDB.Bson.xml",
+        "mongodb.bson.2.19.2.nupkg.sha512",
+        "mongodb.bson.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Newtonsoft.Json/11.0.2": {
       "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "type": "package",
@@ -4011,11 +4047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj",
       "projectName": "Chat.Application",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj",
+      "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4032,8 +4068,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj": {
-              "projectPath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Domain\\Chat.Domain.csproj"
+            "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj": {
+              "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Domain\\Chat.Domain.csproj"
             }
           }
         }

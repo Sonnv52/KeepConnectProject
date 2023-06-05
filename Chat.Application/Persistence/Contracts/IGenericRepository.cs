@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chat.Application.Persistence.Contracts
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<T>: IDisposable where T : class
     {
         Task<T> GetAsync(Guid id);
         Task<IReadOnlyList<T>> GetAllAsync();

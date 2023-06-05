@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XisXgaufCMx9R2qODIra0uKE4VZ96aefjjk6AP5552yN2byoqcj4cvp6nTJZTl0dKso6hoPw+UkWYMNRtX7mIA==",
+  "dgSpecHash": "KPqejkgNcoCZe+QzpgK2Dot4LeSoiIoFpRBDs7xk66C/GInRiWNqBy6F5s0YH+S5LOjLl1rYuWR3AElVY5RlTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\ChatProject\\Chat.Application\\Chat.Application.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
@@ -86,6 +86,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mongodb.bson\\2.19.2\\mongodb.bson.2.19.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

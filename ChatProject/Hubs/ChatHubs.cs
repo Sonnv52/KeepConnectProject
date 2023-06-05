@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿/*using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
@@ -72,7 +72,7 @@ namespace Chat.Api.Hubs
             {
                 Clients.Caller.SendAsync("onError", "OnConnected:" + ex.Message);
             }
-            return base.OnConnectedAsync();*/
+            return base.OnConnectedAsync();
             try
             {
                 _
@@ -80,3 +80,4 @@ namespace Chat.Api.Hubs
         }
     }
 }
+*/

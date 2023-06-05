@@ -1,0 +1,12 @@
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\bin\Debug\net6.0\Chat.Hubs.deps.json
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\bin\Debug\net6.0\Chat.Hubs.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\bin\Debug\net6.0\Chat.Hubs.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.AssemblyInfo.cs
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\refint\Chat.Hubs.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\ref\Chat.Hubs.dll

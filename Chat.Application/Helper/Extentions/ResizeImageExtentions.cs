@@ -23,10 +23,10 @@ namespace Chat.Application.Helper.Extentions
                             graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
                             graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
 
-                            // Vẽ hình ảnh mới từ hình ảnh gốc
+                            // draw on original file
                             graphics.DrawImage(image, new Rectangle(0, 0, newWidth, newHeight));
 
-                            // Lưu hình ảnh mới vào một mảng byte
+                            // save new file to array
                             using (var outputMs = new MemoryStream())
                             {
                                 resizedImage.Save(outputMs, image.RawFormat);
