@@ -1,10 +1,6 @@
 ﻿using Chat.Application.Features.UserApplication.Requests.Commads;
+using Chat.Application.Helper.ErorMessages.ValidateErors;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chat.Application.Features.UserApplication.Validators
 {
@@ -13,10 +9,10 @@ namespace Chat.Application.Features.UserApplication.Validators
         public RefreshTokenCommadValidator()
         {
             RuleFor(r => r.AccessToken)
-                .NotNull().NotEmpty().WithMessage("AccessToken Not Null");
+                .NotNull().NotEmpty().WithMessage($"AccessToken {ValidateError.CANT_BE_NULL}");
 
             RuleFor(r => r.RefreshToken)
-                .NotNull().NotEmpty().WithMessage("RefreshToken Not Null");
+                .NotNull().NotEmpty().WithMessage($"RefreshToken  {ValidateError.CANT_BE_NULL}");
         }
     }
 }

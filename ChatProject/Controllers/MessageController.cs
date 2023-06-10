@@ -1,5 +1,4 @@
-﻿
-using Chat.Api.Requests.Messages;
+﻿using Chat.Api.Requests.Messages;
 using Chat.Application.Persistence.Contracts;
 using Chat.Domain.DAOs;
 using Chat.Domain.DAOs.MongoDbEntities;
@@ -13,6 +12,7 @@ namespace Chat.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(AuthenticationSchemes = "Bearer")]
+    [ValidateAntiForgeryToken]
     public class MessageController : ControllerBase
     {
         private readonly IHubContext<ChatHub> _hubContext;
@@ -44,6 +44,7 @@ namespace Chat.Api.Controllers
               ConnectionHubId = "100",
               UserId = name
             };
+
             await _unitOfWork.UserConnectionIdRepository.AddAsync(user);
             var result = await _unitOfWork.UserConnectionIdRepository.GetByIdAsync(user.Id);
             return Ok(result);

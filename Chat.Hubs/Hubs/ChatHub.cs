@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Chat.Application.Features.UserConnectionId.Requests.Commads;
+using MediatR;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,15 +14,15 @@ namespace Chat.Hubs.Hubs
     public class ChatHub : Hub
     {
         private readonly ILogger<ChatHub> _logger;
-        public static IList<string> _clinetsConnect;
-        public static IDictionary<string, string> _mapConnect;
+        //public static IList<string> _clinetsConnect;
+        //public static IDictionary<string, string> _mapConnect;
         public readonly IMediator _mediator;
 
         public ChatHub(ILogger<ChatHub> logger, IMediator mediator)
         {
             _logger = logger;
-            _clinetsConnect = new List<string>();
-            _mapConnect = new Dictionary<string, string>();
+            //_clinetsConnect = new List<string>();
+            //_mapConnect = new Dictionary<string, string>();
             _mediator = mediator;
         }
 
@@ -37,8 +38,8 @@ namespace Chat.Hubs.Hubs
                 //await LeaveAsync(user.CurrentRoom);
                 var userId = Context.User.FindFirst(ClaimTypes.Name)?.Value ?? "SON";
                 var ip = Context.GetHttpContext().Connection.RemoteIpAddress;
-                _clinetsConnect.Add(Context.ConnectionId);
-                _mapConnect.Add(Context.ConnectionId, userId);
+                //_clinetsConnect.Add(Context.ConnectionId);
+                //_mapConnect.Add(Context.ConnectionId, userId);
                 await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
                 //user.CurrentRoom = roomName;
                 await Clients.Caller.SendAsync("addUser", "You have joined the group successfully");
@@ -52,9 +53,43 @@ namespace Chat.Hubs.Hubs
             }
         }
 
+        public async Task SendE2EAsync(string idFriend)
+        {
+            try
+            {
+                var userId = Context.User.FindFirst(ClaimTypes.Name)?.Value;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task LeaveAsync(string roomName)
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
+        }
+
+        public override async Task OnConnectedAsync()
+        {
+
+            if (Context.User is not null)
+            {
+                //var userId = Context.User.FindFirst(ClaimTypes.Name)?.Value ?? "SON";
+                var addUserConnectCommad = new AddUserConnectCommad
+                {
+                    ConnectionHubId = Context.ConnectionId
+                };
+                _ = await _mediator.Send(addUserConnectCommad);
+            }
+
+            await base.OnConnectedAsync();
+        }
+
+        public override Task OnDisconnectedAsync(Exception exception)
+        {
+            return base.OnDisconnectedAsync(exception);
         }
     }
 }

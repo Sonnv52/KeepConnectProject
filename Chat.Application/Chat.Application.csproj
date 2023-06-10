@@ -28,6 +28,9 @@
     <Folder Include="Features\Message\Requests\Queries\" />
     <Folder Include="Features\Rooms\Handlers\Queries\" />
     <Folder Include="Features\Rooms\Requests\Queries\" />
+    <Folder Include="Features\UserConnectionId\Handlers\Queries\" />
+    <Folder Include="Features\UserConnectionId\Requests\Commads\" />
+    <Folder Include="Features\UserConnectionId\Requests\Queries\" />
   </ItemGroup>
 
 </Project>

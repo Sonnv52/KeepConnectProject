@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Chat.Application.DTOs.UserApp;
+using Chat.Application.Features.UserConnectionId.Requests.Commads;
 using Chat.Domain.DAOs;
+using Chat.Domain.DAOs.MongoDbEntities;
 
 namespace Chat.Application.Profiles
 {
@@ -17,6 +19,12 @@ namespace Chat.Application.Profiles
             .ForMember(dest => dest.LockoutEnabled, opt => opt.MapFrom(src => true))
            .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
            .ReverseMap();
+
+            CreateMap<AddUserConnectCommad, UserConnectionID>()
+                .ForMember(us => us.Id, ui => ui.MapFrom(src => src.Id))
+                .ForMember(us => us.ConnectionHubId, ui => ui.MapFrom(src => src.ConnectionHubId))
+                .ForMember(us => us.UserId, ui => ui.MapFrom(src => src.UserId))
+                .ReverseMap();    
         }
     }
 }

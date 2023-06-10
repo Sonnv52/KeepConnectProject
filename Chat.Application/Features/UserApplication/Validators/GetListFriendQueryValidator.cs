@@ -1,5 +1,6 @@
 ﻿using Chat.Application.Features.UserApplication.Requests.Commads;
 using Chat.Application.Features.UserApplication.Requests.Queries;
+using Chat.Application.Helper.ErorMessages.ValidateErors;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace Chat.Application.Features.UserApplication.Validators
                 .GreaterThan(-1).WithMessage("Page Index Should be greate than or equal 0");
 
             RuleFor(r => r.SearchKey)
-                .MaximumLength(100).WithMessage("Search key is so long");
+                .MaximumLength(100).WithMessage($"Search key {ValidateError.STRING_TOO_LONG}");
         }
     }
 }

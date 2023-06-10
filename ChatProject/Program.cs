@@ -5,7 +5,6 @@ using Chat.Application;
 using Chat.Hubs;
 using Chat.Hubs.Hubs;
 using Chat.Infrastructure;
-using Microsoft.Extensions.Logging;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

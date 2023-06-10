@@ -2807,6 +2807,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Chat.Application": "1.0.0",
           "MediatR": "9.0.0",
           "Microsoft.AspNetCore.SignalR": "1.1.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",

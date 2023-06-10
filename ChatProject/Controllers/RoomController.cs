@@ -12,6 +12,7 @@ namespace Chat.Api.Controllers
     public class RoomController : ControllerBase
     {
         private readonly IMediator _mediator;
+
         public RoomController(IMediator mediator)
         {
             _mediator = mediator;

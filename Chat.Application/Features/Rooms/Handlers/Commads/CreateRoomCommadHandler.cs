@@ -13,11 +13,13 @@ namespace Chat.Application.Features.Rooms.Handlers.Commads
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IHttpContextAccessor _contextAccessor;
+
         public CreateRoomCommadHandler(IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
         {
             _unitOfWork = unitOfWork;
             _contextAccessor = httpContextAccessor;
         }
+
         public async Task<Guid> Handle(CreateRoomCommad request, CancellationToken cancellationToken)
         {
 

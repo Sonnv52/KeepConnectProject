@@ -193,7 +193,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\MoveChat\\KeepConnectProject\\Chat.Application\\Chat.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

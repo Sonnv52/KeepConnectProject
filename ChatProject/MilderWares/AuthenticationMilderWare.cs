@@ -12,6 +12,7 @@ namespace Chat.Api.MilderWares
         private readonly RequestDelegate _next;
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
+
         public JwtAuthenticationMiddleware(RequestDelegate next, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _next = next;
@@ -29,7 +30,6 @@ namespace Chat.Api.MilderWares
             }
 
             var jwt = token.ToString().Replace("Bearer ", "");
-
             var validationParameters = new TokenValidationParameters
             {
                 ValidateIssuer = false,
@@ -38,16 +38,16 @@ namespace Chat.Api.MilderWares
                 ValidIssuer = _configuration["JWT:ValidIssuer"],
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"] ?? ""))
             };
-
             var tokenHandler = new JwtSecurityTokenHandler();
+
             try
             {
                 var _userManager = _httpContextAccessor?.HttpContext?.RequestServices
                     .GetService<UserManager<UserApp>>();
                 var claimsPrincipal = tokenHandler.ValidateToken(jwt, validationParameters,
                     out SecurityToken validatedToken);
-
                 var userIdClaim = claimsPrincipal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
+                
                 if (userIdClaim == null)
                 {
                     context.Response.StatusCode = 401;
@@ -56,9 +56,9 @@ namespace Chat.Api.MilderWares
                 }
 
                 string? Name = userIdClaim.Subject?.Name?.ToString() ?? "";
-
                 // Check if user exists and is not deleted
                 var user = await _userManager.FindByEmailAsync(Name);
+
                 if (user == null || !user.LockoutEnabled)
                 {
                     context.Response.StatusCode = 401;

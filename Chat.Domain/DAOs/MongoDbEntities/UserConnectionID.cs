@@ -12,7 +12,7 @@ namespace Chat.Domain.DAOs.MongoDbEntities
     public class UserConnectionID : BaseEntity
     {
         [BsonId]
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         [BsonElement("userid")]
         public string? UserId { get; set; }

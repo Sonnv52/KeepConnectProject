@@ -17,4 +17,8 @@
     <Folder Include="Meesages\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Chat.Application\Chat.Application.csproj" />
+  </ItemGroup>
+
 </Project>

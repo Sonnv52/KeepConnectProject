@@ -49,6 +49,7 @@ namespace Chat.Infrastructure.Repositories
         {
             GC.SuppressFinalize(this);
         }
+
         private static FilterDefinition<TEntity> FilterId(string key)
         {
             return Builders<TEntity>.Filter.Eq("Id", key);
