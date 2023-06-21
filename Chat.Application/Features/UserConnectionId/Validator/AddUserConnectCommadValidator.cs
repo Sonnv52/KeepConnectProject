@@ -11,6 +11,7 @@ namespace Chat.Application.Features.UserConnectionId.Validator
         {
             RuleFor(x => x.ConnectionHubId).MaximumLength(100)
                 .WithMessage($"Connection {ValidateError.STRING_TOO_LONG}");
+            RuleFor(x => x.UserId).NotNull().WithMessage($"UserId {ValidateError.CANT_BE_NULL}");
         }
     }
 }

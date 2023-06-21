@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Primitives;
+using Microsoft.AspNetCore.Builder;
 
 namespace Chat.Application
 {
@@ -40,6 +41,7 @@ namespace Chat.Application
                     ValidateLifetime = false,
                     ValidateIssuerSigningKey = true
                 };
+                //Authentication with signalR
                 o.Events = new JwtBearerEvents
                 {
                     OnMessageReceived = context =>

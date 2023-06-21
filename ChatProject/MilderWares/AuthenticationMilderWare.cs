@@ -1,4 +1,6 @@
 ﻿using Chat.Domain.DAOs;
+using Chat.Hubs;
+using Chat.Hubs.Hubs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

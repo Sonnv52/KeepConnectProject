@@ -54,5 +54,10 @@ namespace Chat.Infrastructure.Repositories
         {
             return Builders<TEntity>.Filter.Eq("Id", key);
         }
+
+        protected static  FilterDefinition<TEntity> FilterByConnectionId(string connectionId)
+        {
+            return Builders<TEntity>.Filter.Eq("connectionhubid", connectionId);
+        }
     }
 }

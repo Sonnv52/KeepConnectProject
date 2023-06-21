@@ -7,6 +7,7 @@ using Chat.Domain.DAOs;
 using Chat.Domain.DAOs.MongoDbEntities;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace Chat.Application.Features.UserConnectionId.Handlers.Commads
 {
@@ -16,13 +17,15 @@ namespace Chat.Application.Features.UserConnectionId.Handlers.Commads
         private readonly IUnitOfWork _unitOfWork;
         private readonly IHttpContextAccessor _contextAccessor;
         private readonly IMapper _mapper;
+        private readonly ILogger<AddUserConnectCommad> _logger;
 
-        public AddUserConnectCommadHandler(IUnitOfWork unitOfWork, 
-            IHttpContextAccessor httpContextAccessor, IMapper mapper)
+        public AddUserConnectCommadHandler(IUnitOfWork unitOfWork,
+            IMapper mapper, ILogger<AddUserConnectCommad> logger, IHttpContextAccessor httpContextAccessor)
         {
             _unitOfWork = unitOfWork;
-            _contextAccessor = httpContextAccessor;
             _mapper = mapper;
+            _logger = logger;
+            _contextAccessor = httpContextAccessor;
         }
 
         public async Task<Unit> Handle(AddUserConnectCommad request, CancellationToken cancellationToken)
@@ -35,10 +38,8 @@ namespace Chat.Application.Features.UserConnectionId.Handlers.Commads
                 throw new ValidationException(validatorResult);
             }
 
-            var user = _contextAccessor?.HttpContext?.Items["User"] as UserApp;
-            request.UserId = user?.Id;
             var userConnection = _mapper.Map<UserConnectionID>(request);
-            _= await _unitOfWork.UserConnectionIdRepository.AddAsync(userConnection);
+            await _unitOfWork.UserConnectionIdRepository.AddAsync(userConnection);
             return Unit.Value;
         }
     }

@@ -1,4 +1,4 @@
-﻿/*using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
@@ -7,13 +7,13 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 namespace Chat.Api.Hubs
 {
    [Authorize(AuthenticationSchemes = "Bearer")]
-    public class ChatHubs : Hub
+    public class ChatHubs2 : Hub
     {
-        private readonly ILogger<ChatHubs> _logger;
+        private readonly ILogger<ChatHubs2> _logger;
         public static IList<string> _clinetsConnect;
         public static IDictionary<string, string> _mapConnect;
 
-        public ChatHubs(ILogger<ChatHubs> logger)
+        public ChatHubs2(ILogger<ChatHubs2> logger)
         {
             _logger = logger;
             _clinetsConnect = new List<string>();
@@ -52,8 +52,8 @@ namespace Chat.Api.Hubs
         }
 
         public override Task OnConnectedAsync()
-        {/*
-            try
+        {
+            /*try
             {
                 var user = _context.Users.Where(u => u.UserName == IdentityName).FirstOrDefault();
                 var userViewModel = _mapper.Map<ApplicationUser, UserViewModel>(user);
@@ -71,13 +71,8 @@ namespace Chat.Api.Hubs
             catch (Exception ex)
             {
                 Clients.Caller.SendAsync("onError", "OnConnected:" + ex.Message);
-            }
+            }*/
             return base.OnConnectedAsync();
-            try
-            {
-                _
-            }
         }
     }
 }
-*/

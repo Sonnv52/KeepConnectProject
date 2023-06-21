@@ -1,29 +1,26 @@
 ﻿using Chat.Application.Features.UserConnectionId.Requests.Commads;
+using Chat.Domain.DAOs;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chat.Hubs.Hubs
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class ChatHub : Hub
     {
         private readonly ILogger<ChatHub> _logger;
-        //public static IList<string> _clinetsConnect;
-        //public static IDictionary<string, string> _mapConnect;
         public readonly IMediator _mediator;
+        private readonly IHttpContextAccessor _contextAccessor;
 
-        public ChatHub(ILogger<ChatHub> logger, IMediator mediator)
+        public ChatHub(ILogger<ChatHub> logger, IMediator mediator, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
-            //_clinetsConnect = new List<string>();
-            //_mapConnect = new Dictionary<string, string>();
             _mediator = mediator;
+            _contextAccessor = httpContextAccessor;
         }
 
         public async Task JoinAsync(string roomName)
@@ -37,7 +34,7 @@ namespace Chat.Hubs.Hubs
                 // Join to new chat room
                 //await LeaveAsync(user.CurrentRoom);
                 var userId = Context.User.FindFirst(ClaimTypes.Name)?.Value ?? "SON";
-                var ip = Context.GetHttpContext().Connection.RemoteIpAddress;
+                //var ip = Context.GetHttpContext().Connection.RemoteIpAddress;
                 //_clinetsConnect.Add(Context.ConnectionId);
                 //_mapConnect.Add(Context.ConnectionId, userId);
                 await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
@@ -71,25 +68,34 @@ namespace Chat.Hubs.Hubs
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
         }
 
+        //Map user and connection id to hub 
         public override async Task OnConnectedAsync()
         {
-
-            if (Context.User is not null)
+            if (Context.User == null)
             {
-                //var userId = Context.User.FindFirst(ClaimTypes.Name)?.Value ?? "SON";
-                var addUserConnectCommad = new AddUserConnectCommad
-                {
-                    ConnectionHubId = Context.ConnectionId
-                };
-                _ = await _mediator.Send(addUserConnectCommad);
+                await Clients.Caller.SendAsync("Unauthozire");
+                return;
             }
 
-            await base.OnConnectedAsync();
+            var userId = Context.User.FindFirst(ClaimTypes.PrimarySid)?.Value;
+            var addUserConnectCommad = new AddUserConnectCommad
+            {
+                ConnectionHubId = Context.ConnectionId,
+                UserId = userId
+            };
+
+            var send = _mediator.Send(addUserConnectCommad);
+            await Task.WhenAll(base.OnConnectedAsync(), send);
         }
 
-        public override Task OnDisconnectedAsync(Exception exception)
+        //Remove userId-idConnection
+        public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            return base.OnDisconnectedAsync(exception);
+            var commad = new RemoveUserconnectCommad
+            {
+                idConnection = Context.ConnectionId
+            };
+            await Task.WhenAll(_mediator.Send(commad), base.OnDisconnectedAsync(exception));
         }
     }
 }

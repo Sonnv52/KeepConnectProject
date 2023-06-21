@@ -10,3 +10,8 @@ C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Deb
 C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\refint\Chat.Hubs.dll
 C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.pdb
 C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\ref\Chat.Hubs.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\bin\Debug\net6.0\Chat.Application.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\bin\Debug\net6.0\Chat.Domain.dll
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\bin\Debug\net6.0\Chat.Application.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\bin\Debug\net6.0\Chat.Domain.pdb
+C:\Users\Admin\OneDrive\Máy tính\MoveChat\KeepConnectProject\Chat.Hubs\obj\Debug\net6.0\Chat.Hubs.csproj.CopyComplete

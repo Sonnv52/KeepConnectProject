@@ -54,6 +54,7 @@ namespace Chat.Application.Services.Implementions
                 {
                     new Claim(ClaimTypes.Name, userApp.UserName ?? " "),
                     new Claim(ClaimTypes.Email, userApp.Email ?? " "),
+                    new Claim(ClaimTypes.PrimarySid,userApp.Id ?? " "),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
 
@@ -65,6 +66,7 @@ namespace Chat.Application.Services.Implementions
                 var token = Task.Run(() => GetToken(authClaims));
                 var refreshToken = Task.Run(() => GenerateRefreshToken());
                 await Task.WhenAll(token, refreshToken);
+                //Get refresh token
                 userApp.RefreshToken = refreshToken.Result;
                 _ = int.TryParse(_configuration["JWT:RefreshTokenValidityInDays"],
                     out int refreshTokenValidityInDays);

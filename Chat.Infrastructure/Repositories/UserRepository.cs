@@ -5,12 +5,6 @@ using Chat.Domain.DAOs;
 using Chat.Infrastructure.DataContext;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chat.Infrastructure.Repositories
 {
@@ -18,6 +12,7 @@ namespace Chat.Infrastructure.Repositories
     {
         private readonly ChatDbContext _context;
         private readonly IHttpContextAccessor _contextAccessor;
+
         public UserRepository(ChatDbContext chatDbContext, IHttpContextAccessor contextAccessor) : base(chatDbContext)
         {
             _context = chatDbContext;

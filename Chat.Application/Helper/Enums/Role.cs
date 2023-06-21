@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Chat.Application.Helper.Enums
 {
-    internal class Role
+    public enum Role
     {
+        ADMIN,
+        USER
     }
 }

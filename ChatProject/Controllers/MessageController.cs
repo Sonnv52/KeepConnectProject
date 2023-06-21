@@ -1,8 +1,12 @@
 ﻿using Chat.Api.Requests.Messages;
+using Chat.Application.Features.UserConnectionId.Requests.Commads;
+using Chat.Application.Features.UserConnectionId.Requests.Queries;
 using Chat.Application.Persistence.Contracts;
 using Chat.Domain.DAOs;
 using Chat.Domain.DAOs.MongoDbEntities;
+using Chat.Hubs;
 using Chat.Hubs.Hubs;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -12,16 +16,18 @@ namespace Chat.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(AuthenticationSchemes = "Bearer")]
-    [ValidateAntiForgeryToken]
     public class MessageController : ControllerBase
     {
         private readonly IHubContext<ChatHub> _hubContext;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediator _mediator;
+        private readonly ILogger<MessageController> _logger;
 
-        public MessageController(IHubContext<ChatHub> hubContext, IUnitOfWork unitOfWork)
+        public MessageController(IHubContext<ChatHub> hubContext,
+            IMediator mediator, ILogger<MessageController> logger)
         {
             _hubContext = hubContext;
-            _unitOfWork = unitOfWork;
+            _mediator = mediator;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -34,20 +40,48 @@ namespace Chat.Api.Controllers
         }
 
         [HttpPost]
-        [Route("/test")]
+        [Route("/testadd")]
         [AllowAnonymous]
-        public async Task<IActionResult> TestMGDB(string name)
+        public async Task<IActionResult> TestMGDB([FromBody] string name)
         {
-            var user = new UserConnectionID
+            var commad = new AddUserConnectCommad
             {
-              Id= Guid.NewGuid().ToString(),
-              ConnectionHubId = "100",
-              UserId = name
+                ConnectionHubId = name,
+                Id = Guid.NewGuid().ToString(),
             };
 
-            await _unitOfWork.UserConnectionIdRepository.AddAsync(user);
-            var result = await _unitOfWork.UserConnectionIdRepository.GetByIdAsync(user.Id);
+            _logger.LogError("Lỗi");
+            var result = _mediator.Send(commad);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("/testremove")]
+        [AllowAnonymous]
+        public async Task<IActionResult> TestRemoveMGDB([FromBody] string id)
+        {
+            var commad = new RemoveUserconnectCommad { idConnection = id };
+            var result = await _mediator.Send(commad);
             return Ok(result);
+        }
+
+
+        [HttpGet]
+        [Route("/testget")]
+        [AllowAnonymous]
+        public async Task<IActionResult> TestGetMGDB(string name)
+        {
+            var query = new GetUserConnectTestQuery { };
+
+            var result = await _mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("/testhttp")]
+        public async Task<IActionResult> TestHttp()
+        {
+            return Ok();
         }
     }
 }
